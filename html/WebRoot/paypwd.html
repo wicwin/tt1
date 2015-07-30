@@ -1,0 +1,384 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk">
+<title>用户中心_账户安全_图腾贷官网_p2p网贷_p2p投资理财_中国最好的网贷平台</title>
+<link href="assets/css/index.css" rel="stylesheet" type="text/css">
+<script src="assets/js/jquery.min.js" charset="utf-8"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"><!--font-awesome图标字体引用-->
+</head>
+<body>
+<div class="container"><!--外部容器-->
+  <div class="online_service" id="online_service_box"><!--在线客服-->
+    <em title="在线客服" onclick="javascript:openCSBar(this);return false;" style="display:none;"></em>
+    <a href="javascript:;" onclick="javascript:closeCSBar(this);return false;" title="关闭" id="close_cs_left" class="close2" style="right:13px;"></a>
+    <div class="os_main" style="right:0px;">
+        <a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" target="_blank" title="图腾贷官方群" class="qqqun"></a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=792546003&site=qq&menu=yes" title="点击这里发消息给我">客服-金金</a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=707631952&site=qq&menu=yes" title="点击这里发消息给我">客服-莎莎</a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=286953203&site=qq&menu=yes" title="点击这里发消息给我">客服-阳阳</a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=982634105&site=qq&menu=yes" title="点击这里发消息给我">客服-肖肖</a>
+		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=412691143&site=qq&menu=yes" title="点击这里发消息给我">客服-淘淘</a>
+        <i></i>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/js/jquery.cookie.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+function openCSBar(o) {
+    var _self = $(o);
+    _self.siblings('div.os_main, a.close2').show();
+    _self.siblings('div.os_main').css('right', '0px');
+    _self.siblings('a.close2').css('right', '13px');
+    _self.hide();
+}
+
+function closeCSBar(o) {
+    var _self = $(o);
+    _self.siblings('em').show();
+    _self.siblings('div.os_main').hide();
+    _self.hide();
+    $.cookie('is_cs_pop', '1', { expires: 365 });
+}
+
+$(function(){
+    var is_cs_pop = $.cookie('is_cs_pop'),
+        o         =  $('a#close_cs_left').get(0);
+    if (is_cs_pop !== undefined) {
+        closeCSBar(o);
+    }
+})
+</script>
+
+      <div class="header"><!--顶部小黑条条-->
+        <div class="w1110">
+            <em class="tips_phone">服务时间：周一至周五9：00-17:30</em>
+            <div class="top_link" style="inline-block;">
+                <a href="/help/index.html">新手指引</a>
+                <a href="/?user&q=login">登录</a><a href="/?user&q=reg">免费注册</a>
+            </div>
+            <div class="user_link" style="display:none;">
+            <p id="login-user-name"><i class="icon_user2"></i></p>
+            <span id="user_short_menu">
+            <a href="/?user">用户中心</a>
+            <a href="/?user&q=code/borrow/success&type=wait">待收列表</a>
+            <a href="/?user&q=code/account/recharge_new">充值</a>
+            <a href="/?user&q=logout&type=index">退出登录</a>
+            </span>
+            </div>
+        </div>
+    </div>
+    <div class="nav"><!--顶部导航-->
+        <div class="w1110">
+            <a href="/index.php" class="icon_logo"></a>
+            <div class="nav_title" style="right:116px;">
+                <a href="/index.php" style="margin:0px 10px;">网站首页</a>
+                <a href="/index.php?invest" style="margin:0px 10px;">我要投资</a>
+                <a class="sscw" href="/rtfs/index.html" style="margin:0px 10px;">实时财务<i class="icon_new"></i></a>
+                <a href="http://bbs.tt1.com.cn/forum-77-1.html" target="_blank" style="margin:0px 10px;">车库照片</a>
+                <a href="/help/index.html" style="margin:0px 10px;">新手指引</a>
+                <a href="/faq/index.html" style="margin:0px 10px;">常见问题</a>
+                <a href="/?about_us" style="margin:0px 10px;">关于我们</a>
+                <a href="/joinin/index.html" style="margin:0px 10px;background:#ea544a; padding:3px 5px 4px 7px; border-radius:2px; color:#fff;">招商合作</a>
+                <a href="http://bbs.tt1.com.cn" style="margin:0px 10px;">图腾贷论坛</a>
+            </div>
+            <div class="qtpanel">
+              <h2>
+                  <i class="icon_qq has_tooltip" title="在线客服"></i>
+                  <div class="popbox tooltip" tabindex="-2" style="display:none;">
+                      <i class="arrow_up"></i>
+                      <a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" class="qqqun" target="_blank">官方群</a>
+                      <a href="http://wpa.qq.com/msgrd?v=3&uin=792546003&site=qq&menu=yes" class="qq" target="_blank">客服金金</a>
+                      <a href="http://wpa.qq.com/msgrd?v=3&uin=707631952&site=qq&menu=yes" class="qq" target="_blank">客服莎莎</a>
+                      <a href="http://wpa.qq.com/msgrd?v=3&uin=286953203&site=qq&menu=yes" class="qq" target="_blank">客服阳阳</a>
+					  <a href="http://wpa.qq.com/msgrd?v=3&uin=982634105&site=qq&menu=yes" class="qq" target="_blank">客服肖肖</a>
+					  <a href="http://wpa.qq.com/msgrd?v=3&uin=412691143&site=qq&menu=yes" class="qq" target="_blank">客服淘淘</a>
+                  </div>
+              </h2>
+              <!--<h2 style="display:none;"><i class="icon_sina"></i> </h2>-->
+              <h2>
+                  <i class="icon_weixin has_tooltip" title="官方微信"></i>
+                  <div class="popbox tooltip" tabindex="-1" style="left:-52px;display:none;">
+                      <i class="arrow_up"></i>
+                      <em></em>
+                  </div>
+              </h2> 
+            </div>
+        </div>
+    </div>
+    <!--end nav-->
+
+<script src="/assets/js/tooltip.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+$(function(){
+    var is_cs_pop = $.cookie('is_cs_pop');
+    $('.has_tooltip').ToolTip();
+
+    $.ajax({
+        url: '/?user&q=get_user_info',
+        data: {},
+        cache: false,
+        type: 'GET',
+        dataType: 'json'
+    })
+    .done(function(result){
+        if (result.username.length > 0) {
+            var username = result.username.substr(0, 3) + '******' + result.username.substr(9, 2);
+            $('div.top_link').hide();
+            $('p#login-user-name').html('<i class="icon_user2"></i>' + username);
+            $('div.user_link').show();
+
+            $('.user_req_login').hide();
+            $('.user_logined').show();
+            $('p#index_login_user_name').html('您好，' + username);
+
+        }
+    })
+});
+</script>
+
+  <div class="clear"></div>
+  <div class="user_main"><!--主要内容区域-->
+          <div class="user_left">
+      <div class="daily_income"><!--每日收益-->
+                <h2>￥0.00</h2>
+        <p>今日总收益</p>
+      </div>
+      <!--end daily_income-->
+      
+     <div class="uleft_button">
+						<a class="redbutton4" href="${pageContext.request.contextPath}/recharge_new.jsp">充值</a>
+						<a class="greenbutton4" href="${pageContext.request.contextPath}/cash_new.jsp">提现</a>
+					</div>
+					<ul>
+						<li>
+							<i class="icon_usericon1"></i><a href="${pageContext.request.contextPath}/submitedIndex.jsp">我的首页</a><i
+								class="fa fa-angle-right"
+							></i>
+							<!--指示当前页面的标记-->
+						</li>
+						<li>
+							<i class="icon_usericon2"></i><a
+								href="${pageContext.request.contextPath}/wait.jsp"
+							>待收列表</a><i class="fa fa-angle-right"></i>
+						</li>
+						<!--<li><i class="icon_usericon3"></i><a href="#">已还款的项目</a><i class="fa fa-angle-right"></i></li>-->
+						<li>
+							<i class="icon_usericon4"></i><a href="${pageContext.request.contextPath}/zijingliushui.jsp">资金流水</a><i
+								class="fa fa-angle-right"
+							></i>
+						</li>
+						<li class="on">
+							<i class="icon_usericon5"></i><a
+								href="${pageContext.request.contextPath}/autoNew.jsp"
+							>自动投标</a><i class="fa fa-angle-right"></i><i
+								class="icon_arrow_left2"
+							></i>
+						</li>
+						<li>
+							<i class="icon_usericon6"></i><a
+								href="${pageContext.request.contextPath}/bank.jsp"
+							>银行卡管理</a><i class="fa fa-angle-right"></i>
+						</li>
+						<li>
+							<i class="icon_usericon3"></i><a
+								style="color: #ffde00; font-weight: bold;"
+								href="${pageContext.request.contextPath}/reg.jsp"
+							>推荐注册(new)</a><i class="fa fa-angle-right"></i>
+						</li>
+						<li>
+							<i class="icon_usericon7"></i><a
+								href="${pageContext.request.contextPath}/geren.jsp"
+							>个人资料</a><i class="fa fa-angle-right"></i>
+						</li>
+						<li>
+							<i class="icon_usericon8"></i><a
+								href="${pageContext.request.contextPath}/paypwd.jsp"
+							>账户安全</a><i class="fa fa-angle-right"></i>
+						</li>
+					</ul>
+				</div>
+    <div class="user_right">
+      
+      <div class="user_banner">
+          <h2>
+              <span>你好,138******74</span>
+              <a href="#" class="vip" title="vip"></a>
+              <a class="on" href="#" title="手机已认证"><i class="fa fa-mobile-phone"></i></a>
+                            <a title="银行卡未绑定" href="/?user&q=code/account/bank"><i class="fa fa-credit-card"></i></a>
+              <a class="on" title="个人信息已认证" href="#"><i class="fa fa-user"></i></a>
+              <a title="交易密码未设置" href="/?user&q=code/users/paypwd"><i class="fa fa-lock"></i></a>
+          </h2>
+        <p>
+                <i class="fa fa-bar-chart-o"></i> 账户总额：<a href="/?user&q=code/account/log">￥0.00元</a><i class="fa fa-ban"></i> 冻结总额：<a href="/?user&q=code/borrow/success&type=wait">￥0.00元</a></p>
+        <a href="/?user&q=logout" class="exit">退出登录</a> 
+      </div>
+      
+      <script type="text/javascript" charset="gbk">
+        $(function(){
+            var fh = 40 + 97 + 100 + 40,
+                wh = $(window).height(),
+                mh = wh - fh;
+            
+            if (mh < 610) {
+                mh = 610;
+            }
+
+            $('div.user_main').css('min-height', mh);
+
+            $('i[url],p[url]').click(function(){
+               window.location.href = $(this).attr('url');
+            });
+        });
+      </script>
+      
+      <div class="clear"></div>
+      <div class="plist"><!--我的投资-->
+        <h2>设置交易密码</h2>
+	    <form action="/?user&q=code/users/paypwd" name="form1" id="paypasswd_form" method="post">
+        <ul class="recharge">
+                    <li style="margin-top:5px;"><span>登录密码：</span><input class="inputbox" type="password" name="oldpassword" class="inputbox" maxlength="16" placeholder="请输入登录密码">
+          <input type="hidden" name="phone" value="13880686274">
+          <i></i>
+          </li>
+          <li style="margin-top:5px;"><span>交易密码：</span><input type="password" name="newpassword" title="交易密码" class="inputbox" maxlength="16" placeholder="请输入交易密码">
+          <i></i>
+          </li>
+          <li style="margin-top:5px;"><span>重复输入：</span><input type="password" name="newpassword1" title="重复密码" class="inputbox" maxlength="16" placeholder="请再输入一次">
+          <i></i>
+          </li>
+          <li style="margin-top:5px;">
+          <span style="width:86px;">手机验证码：</span><input placeholder="手机验证码" class="inputbox" maxlength="6" name="phone_captcha" type="text"><a  href="javascript:;" onclick="send_phone_captcha(this);return false;" id="send_phone_captcha" class="graybutton3">发送验证码</a>
+          <i></i>
+          </li>
+          <li>
+             <span></span><a href="javascript:;" onclick="javascript:payPasswd(this);return false;" class="greenbutton3"><b>设置交易密码</b></a>
+          </li>
+                  </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--end main-->
+  <div class="clear"></div>
+      <div class="footer"><!--底部-->
+        <div class="footer_main">
+            <h2>
+                <a href="/hetong/11410246594/a208.html">法律法规</a>
+                <a href="/hetong/11410256105/a211.html">公司证照</a>
+                <a href="/hetong/11410310566/a209.html">债权转让协议书</a>
+                <a href="/hetong/131413277622/a279.html">办公环境</a>
+                <a href="/notice/11410269888/a213.html">资费说明</a>
+                <a href="/assets/images/20140910120637.jpg" target="_blank">平台原理</a>
+            </h2>
+            <h3>公司地址：成都市青羊区顺城大街冠城广场12楼E座</h3>
+            <h3>&copy;2014 成都市正大图腾网络科技有限公司&nbsp;<a href="http://www.miitbeian.gov.cn" target="_blank">蜀ICP备14007465号-3</a></h3>
+            <h4>400-007-9028</h4>
+            <h5><i class="icon_phone"></i>官方群：<a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" target="_blank">377599603(点击加入)</a></h5>
+            <a key ="5492590f3b05a3da0fbc70ae"  logo_size="83x30"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+        </div>
+    </div>
+    <!--end footer-->
+    <div style="display:none;">
+       
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253031880'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1253031880' type='text/javascript'%3E%3C/script%3E"));</script>
+       
+    </div>
+
+</div>
+<!--end container-->
+
+<script src="/assets/js/tabs.js" charset="utf-8"></script>
+<script src="/assets/js/tt1.login.js" charset="gbk"></script>
+<script src="/assets/js/jquery.simplemodal-1.4.4.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+
+function payPasswd() {
+    var isPost = true;
+
+    $('form#paypasswd_form').find('input[type="text"]').each(function(){
+        if ($.trim($(this).val()).length <= 0) {
+            isPost = false;
+        }
+    });
+
+    if (isPost) {
+        var p1 = $('input[name="newpassword"]').val(),
+            p2 = $('input[name="newpassword1"]').val();
+
+        if (p1.length < 6 ) {
+            alert('交易密码不得少于6位');
+            return false;
+        }
+
+        if (p1 != p2) {
+            alert('两次密码输入不一至，请仔细检查');
+            return false;
+        }
+    }
+    
+    if (isPost) {
+        $('form#paypasswd_form').submit();
+    }
+    else {
+        alert('交易密码信息填写不完整，请仔细检查');
+        return false;
+    }
+}
+
+var counter = 0;
+
+function send_phone_captcha(o)
+{
+    if (counter > 0) {
+        return false;
+    }
+    var _self = $(o),
+        elm = $('input[name="phone"]');
+
+    $.ajax({
+        url: '/?user&q=user_phone_captcha',
+        type: "POST",
+        dataType: "json",
+        async: false,
+        data: {phone: elm.val()}
+    })
+    .always(function(){
+    })
+    .done(function(result){
+        if (result.success) {
+            counter = 60;
+            countdown();
+        }
+        else {
+            alert('验证短信发送失败，请联系客服人员');
+        }
+    })
+    .fail(function(){
+       alert('验证短信发送失败，请联系客服人员');
+    });
+}
+
+function countdown()
+{
+    counter--;
+    if (counter <= 0) {
+        $('a#send_phone_captcha').text('获取短信验证码').css({color: '#656565'});
+    }
+    else {
+        $('a#send_phone_captcha').text( String(counter) + '秒后重新获取').css({color: '#c0c0c0'});
+        setTimeout(countdown, 900);
+    }
+};
+</script>
+
+</body>
+</html>

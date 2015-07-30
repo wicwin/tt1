@@ -1,0 +1,588 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>用户中心_提现申请_图腾贷官网_p2p网贷_p2p投资理财_中国最好的网贷平台</title>
+<link href="assets/css/index.css?ver=1.1" rel="stylesheet" type="text/css">
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"><!--font-awesome图标字体引用-->
+<script src="assets/js/jquery.min.js" charset="utf-8"></script>
+
+<style type="text/css">
+.fee_box{background:#fff; width:910px; float:left; box-shadow:1px 1px 3px 0px rgba(34, 25, 25, 0.2); border:1px solid #d5d5d5\9\0; position:relative;}
+</style>
+
+</head>
+<body>
+<div class="container"><!--外部容器-->
+  <div class="online_service" id="online_service_box"><!--在线客服-->
+    <em title="在线客服" onclick="javascript:openCSBar(this);return false;" style="display:none;"></em>
+    <a href="javascript:;" onclick="javascript:closeCSBar(this);return false;" title="关闭" id="close_cs_left" class="close2" style="right:13px;"></a>
+    <div class="os_main" style="right:0px;">
+        <a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" target="_blank" title="图腾贷官方群" class="qqqun"></a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=792546003&site=qq&menu=yes" title="点击这里发消息给我">客服-金金</a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=707631952&site=qq&menu=yes" title="点击这里发消息给我">客服-莎莎</a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=286953203&site=qq&menu=yes" title="点击这里发消息给我">客服-阳阳</a>
+        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=982634105&site=qq&menu=yes" title="点击这里发消息给我">客服-肖肖</a>
+		<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=412691143&site=qq&menu=yes" title="点击这里发消息给我">客服-淘淘</a>
+        <i></i>
+    </div>
+</div>
+
+<script type="text/javascript" src="/assets/js/jquery.cookie.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+function openCSBar(o) {
+    var _self = $(o);
+    _self.siblings('div.os_main, a.close2').show();
+    _self.siblings('div.os_main').css('right', '0px');
+    _self.siblings('a.close2').css('right', '13px');
+    _self.hide();
+}
+
+function closeCSBar(o) {
+    var _self = $(o);
+    _self.siblings('em').show();
+    _self.siblings('div.os_main').hide();
+    _self.hide();
+    $.cookie('is_cs_pop', '1', { expires: 365 });
+}
+
+$(function(){
+    var is_cs_pop = $.cookie('is_cs_pop'),
+        o         =  $('a#close_cs_left').get(0);
+    if (is_cs_pop !== undefined) {
+        closeCSBar(o);
+    }
+})
+</script>
+
+      <div class="header"><!--顶部小黑条条-->
+        <div class="w1110">
+            <em class="tips_phone">服务时间：周一至周五9：00-17:30</em>
+            <div class="top_link" style="inline-block;">
+                <a href="/help/index.html">新手指引</a>
+                <a href="/?user&q=login">登录</a><a href="/?user&q=reg">免费注册</a>
+            </div>
+            <div class="user_link" style="display:none;">
+            <p id="login-user-name"><i class="icon_user2"></i></p>
+            <span id="user_short_menu">
+            <a href="/?user">用户中心</a>
+            <a href="/?user&q=code/borrow/success&type=wait">待收列表</a>
+            <a href="/?user&q=code/account/recharge_new">充值</a>
+            <a href="/?user&q=logout&type=index">退出登录</a>
+            </span>
+            </div>
+        </div>
+    </div>
+    <div class="nav"><!--顶部导航-->
+        <div class="w1110">
+            <a href="/index.php" class="icon_logo"></a>
+            <div class="nav_title" style="right:116px;">
+                <a href="/index.php" style="margin:0px 10px;">网站首页</a>
+                <a href="/index.php?invest" style="margin:0px 10px;">我要投资</a>
+                <a class="sscw" href="/rtfs/index.html" style="margin:0px 10px;">实时财务<i class="icon_new"></i></a>
+                <a href="http://bbs.tt1.com.cn/forum-77-1.html" target="_blank" style="margin:0px 10px;">车库照片</a>
+                <a href="/help/index.html" style="margin:0px 10px;">新手指引</a>
+                <a href="/faq/index.html" style="margin:0px 10px;">常见问题</a>
+                <a href="/?about_us" style="margin:0px 10px;">关于我们</a>
+                <a href="/joinin/index.html" style="margin:0px 10px;background:#ea544a; padding:3px 5px 4px 7px; border-radius:2px; color:#fff;">招商合作</a>
+                <a href="http://bbs.tt1.com.cn" style="margin:0px 10px;">图腾贷论坛</a>
+            </div>
+            <div class="qtpanel">
+              <h2>
+                  <i class="icon_qq has_tooltip" title="在线客服"></i>
+                  <div class="popbox tooltip" tabindex="-2" style="display:none;">
+                      <i class="arrow_up"></i>
+                      <a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" class="qqqun" target="_blank">官方群</a>
+                      <a href="http://wpa.qq.com/msgrd?v=3&uin=792546003&site=qq&menu=yes" class="qq" target="_blank">客服金金</a>
+                      <a href="http://wpa.qq.com/msgrd?v=3&uin=707631952&site=qq&menu=yes" class="qq" target="_blank">客服莎莎</a>
+                      <a href="http://wpa.qq.com/msgrd?v=3&uin=286953203&site=qq&menu=yes" class="qq" target="_blank">客服阳阳</a>
+					  <a href="http://wpa.qq.com/msgrd?v=3&uin=982634105&site=qq&menu=yes" class="qq" target="_blank">客服肖肖</a>
+					  <a href="http://wpa.qq.com/msgrd?v=3&uin=412691143&site=qq&menu=yes" class="qq" target="_blank">客服淘淘</a>
+                  </div>
+              </h2>
+              <!--<h2 style="display:none;"><i class="icon_sina"></i> </h2>-->
+              <h2>
+                  <i class="icon_weixin has_tooltip" title="官方微信"></i>
+                  <div class="popbox tooltip" tabindex="-1" style="left:-52px;display:none;">
+                      <i class="arrow_up"></i>
+                      <em></em>
+                  </div>
+              </h2> 
+            </div>
+        </div>
+    </div>
+    <!--end nav-->
+
+<script src="/assets/js/tooltip.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+$(function(){
+    var is_cs_pop = $.cookie('is_cs_pop');
+    $('.has_tooltip').ToolTip();
+
+    $.ajax({
+        url: '/?user&q=get_user_info',
+        data: {},
+        cache: false,
+        type: 'GET',
+        dataType: 'json'
+    })
+    .done(function(result){
+        if (result.username.length > 0) {
+            var username = result.username.substr(0, 3) + '******' + result.username.substr(9, 2);
+            $('div.top_link').hide();
+            $('p#login-user-name').html('<i class="icon_user2"></i>' + username);
+            $('div.user_link').show();
+
+            $('.user_req_login').hide();
+            $('.user_logined').show();
+            $('p#index_login_user_name').html('您好，' + username);
+
+        }
+    })
+});
+</script>
+
+
+    <div class="popuplayer" style="left:30%;display:none;"><!--确认投资-->
+  <div class="login_box confirm" id="paypwd-popup-window">
+    <div class="login_text"> <em><span>设置交易密码</span></em>
+      <p>SET PASSWORD</p>
+    </div>
+    <ul>
+	  <form action="/?user&q=code/users/paypwd" name="form1" id="paypasswd_form" method="post">
+      <li> <em class="tips_text">登录密码</em>
+        <input style="text-indent:88px;" type="password" name="oldpassword" title="登录密码" rule="required|min:6|max:16" class=" inputbox" maxlength="16" placeholder="请输入登录密码">
+        <i></i>
+      </li>
+      <li> <em class="tips_text">交易密码</em>
+        <input style="text-indent:88px;" type="password" name="newpassword" title="交易密码" rule="required|min:6|max:16" class="inputbox" maxlength="16" placeholder="请输入交易密码">
+        <i></i>
+      </li>
+      <li> <em class="tips_text">重复输入</em>
+        <input style="text-indent:88px;" type="password" name="newpassword1" title="重复密码"  rule="required|matches:[name='newpassword']" class="inputbox" maxlength="16" placeholder="请再输入一次">
+        <i></i>
+      </li>
+      <li> <em class="tips_text">验证码</em>
+        <input class="inputbox2" name="phone_captcha" type="text" title="验证码" rule="required|min:6|max:6|number" maxlength="6" placeholder="请输入验证码">
+        <span><a href="javascript:;" onclick="send_phone_captcha(this);return false;" id="send_phone_captcha">发送验证码</a></span>
+        <i></i></li>
+      <li>
+        <input type="hidden" name="phone" value="13880686274">
+        <input type="button" class="redbutton" id="paypasswd_submit" value="设置提现密码">
+      </li>
+      </form>
+      <div class="clear"></div>
+    </ul>
+  </div>
+</div>
+  <div class="popuplayer" style="left:30%;display:none;"><!--确认投资-->
+  <div class="fee_box confirm" id="fee-popup-window">
+    <img src="/assets/images/date15.png?ver=0.1" alt="手续费收取计算规则"/>
+  </div>
+</div>
+  <div class="clear"></div>
+  <div class="user_main"><!--主要内容区域-->
+          <div class="user_left">
+      <div class="daily_income"><!--每日收益-->
+                <h2>￥0.00</h2>
+        <p>今日总收益</p>
+      </div>
+      <!--end daily_income-->
+      
+     <div class="uleft_button">
+						<a class="redbutton4" href="${pageContext.request.contextPath}/recharge_new.jsp">充值</a>
+						<a class="greenbutton4" href="${pageContext.request.contextPath}/cash_new.jsp">提现</a>
+					</div>
+					<ul>
+						<li>
+							<i class="icon_usericon1"></i><a href="${pageContext.request.contextPath}/submitedIndex.jsp">我的首页</a><i
+								class="fa fa-angle-right"
+							></i>
+							<!--指示当前页面的标记-->
+						</li>
+						<li>
+							<i class="icon_usericon2"></i><a
+								href="${pageContext.request.contextPath}/wait.jsp"
+							>待收列表</a><i class="fa fa-angle-right"></i>
+						</li>
+						<!--<li><i class="icon_usericon3"></i><a href="#">已还款的项目</a><i class="fa fa-angle-right"></i></li>-->
+						<li>
+							<i class="icon_usericon4"></i><a href="${pageContext.request.contextPath}/zijingliushui.jsp">资金流水</a><i
+								class="fa fa-angle-right"
+							></i>
+						</li>
+						<li class="on">
+							<i class="icon_usericon5"></i><a
+								href="${pageContext.request.contextPath}/autoNew.jsp"
+							>自动投标</a><i class="fa fa-angle-right"></i><i
+								class="icon_arrow_left2"
+							></i>
+						</li>
+						<li>
+							<i class="icon_usericon6"></i><a
+								href="${pageContext.request.contextPath}/bank.jsp"
+							>银行卡管理</a><i class="fa fa-angle-right"></i>
+						</li>
+						<li>
+							<i class="icon_usericon3"></i><a
+								style="color: #ffde00; font-weight: bold;"
+								href="${pageContext.request.contextPath}/reg.jsp"
+							>推荐注册(new)</a><i class="fa fa-angle-right"></i>
+						</li>
+						<li>
+							<i class="icon_usericon7"></i><a
+								href="${pageContext.request.contextPath}/geren.jsp"
+							>个人资料</a><i class="fa fa-angle-right"></i>
+						</li>
+						<li>
+							<i class="icon_usericon8"></i><a
+								href="${pageContext.request.contextPath}/paypwd.jsp"
+							>账户安全</a><i class="fa fa-angle-right"></i>
+						</li>
+					</ul>
+				</div>
+    <div class="user_right">
+      
+      <div class="user_banner">
+          <h2>
+              <span>你好,138******74</span>
+              <a href="#" class="vip" title="vip"></a>
+              <a class="on" href="#" title="手机已认证"><i class="fa fa-mobile-phone"></i></a>
+                            <a title="银行卡未绑定" href="/?user&q=code/account/bank"><i class="fa fa-credit-card"></i></a>
+              <a class="on" title="个人信息已认证" href="#"><i class="fa fa-user"></i></a>
+              <a title="交易密码未设置" href="/?user&q=code/users/paypwd"><i class="fa fa-lock"></i></a>
+          </h2>
+        <p>
+                <i class="fa fa-bar-chart-o"></i> 账户总额：<a href="/?user&q=code/account/log">￥0.00元</a><i class="fa fa-ban"></i> 冻结总额：<a href="/?user&q=code/borrow/success&type=wait">￥0.00元</a></p>
+        <a href="/?user&q=logout" class="exit">退出登录</a> 
+      </div>
+      
+      <script type="text/javascript" charset="gbk">
+        $(function(){
+            var fh = 40 + 97 + 100 + 40,
+                wh = $(window).height(),
+                mh = wh - fh;
+            
+            if (mh < 610) {
+                mh = 610;
+            }
+
+            $('div.user_main').css('min-height', mh);
+
+            $('i[url],p[url]').click(function(){
+               window.location.href = $(this).attr('url');
+            });
+        });
+      </script>
+      
+      <div class="clear"></div>
+      <!--end over-->
+      <div class="over"><!--账户余额-->
+	            <div class="over_cont">
+          <p>可用余额</p>
+          <h2>￥0.00元</h2>
+          <i class="icon_arrow_left2"></i> </div>
+        <div class="over_operation">
+          <div class="oop2" style="width:510px;">
+              <p>累计成功提现0次，提现总额：￥0.00元，共支出手续费:￥0.00元</p>
+              <a href="/?user&q=code/account/cash" class="yellow_button2">提现详情</a>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="plist"><!--我的投资-->
+        <h2>提现</h2>
+		<form action="" method="post" id="cash_apply_form" name="form1">
+        <ul class="recharge">
+                    <li><span>真实姓名：</span>杨**</li>
+          <li><span>身份证号：</span>5************5</li>
+           <li style="margin-top:5px;"><span>充值金额：</span>
+          <input placeholder="请输入提现金额" name="money.amount" class="inputbox only_float" type="text" autocomplete="off" maxlength="9" id="amount">
+         <input   name="money.kunnr" id="kunnr" type="hidden" value="22222" />
+         <li><a href="javascript:cashnew(this);" class="redbutton3"><b>立即提现</b></a></li>
+          <!--  
+                                        <li style="margin-top:5px;">您还未绑定过银行卡，不能申请提现</li>
+          <li><a href="/?user&q=code/account/bank" class="greenbutton3"><b>绑定银行卡</b></a></li>
+                              <li style="margin-top:5px;">您还未设置过交易密码，不能申请提现</li>
+          <li><a href="/?user&q=code/users/paypwd" class="greenbutton3"><b>设置交易密码</b></a></li>
+          <!--<li><a href="javascript:;" onclick="javascript:payPasswd(this);return false;" class="greenbutton3"><b>设置交易密码</b></a></li>-->
+          
+                              <div class="caption2"><strong>图腾贷免收回款提现和奖励提现的费用</strong><br>
+            1、工作日16:00之前的提现申请，当天处理。工作日16:00以后的申请，第二天进行处理。<br>
+            网银转账后，实际到账时间根据收付款银行、地区以及日期的不同，到账时间会有所差异。若有疑问，可联系客服索取网银转账截图。提现单笔最低100元。
+            <br>
+            2、充值15日内提现的，未投资部分收取5‰手续费，<a href="javascript:;" onclick="javascript:feeDetail(this);return false;" class="red"><b>15日内手续费收取详细计算规则</b></a>
+            <br>
+            3、提现优先使用回款到账金额（不包含待收），投标优先使用新充值金额。<br>
+            4、每月4次免费提现机会，超过4次，按每笔2元收取服务费。<br>
+            注：本网站坚决抵制信用卡套现行为！ 
+ <a href="#" class="close2" title="关闭"></a>
+ </div>
+        </ul>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--end main-->
+  <div class="clear"></div>
+      <div class="footer"><!--底部-->
+        <div class="footer_main">
+            <h2>
+                <a href="/hetong/11410246594/a208.html">法律法规</a>
+                <a href="/hetong/11410256105/a211.html">公司证照</a>
+                <a href="/hetong/11410310566/a209.html">债权转让协议书</a>
+                <a href="/hetong/131413277622/a279.html">办公环境</a>
+                <a href="/notice/11410269888/a213.html">资费说明</a>
+                <a href="/assets/images/20140910120637.jpg" target="_blank">平台原理</a>
+            </h2>
+            <h3>公司地址：成都市青羊区顺城大街冠城广场12楼E座</h3>
+            <h3>&copy;2014 成都市正大图腾网络科技有限公司&nbsp;<a href="http://www.miitbeian.gov.cn" target="_blank">蜀ICP备14007465号-3</a></h3>
+            <h4>400-007-9028</h4>
+            <h5><i class="icon_phone"></i>官方群：<a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" target="_blank">377599603(点击加入)</a></h5>
+            <a key ="5492590f3b05a3da0fbc70ae"  logo_size="83x30"  logo_type="realname"  href="http://www.anquan.org" ><script src="http://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+        </div>
+    </div>
+    <!--end footer-->
+    <div style="display:none;">
+       
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253031880'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1253031880' type='text/javascript'%3E%3C/script%3E"));</script>
+       
+    </div>
+
+</div>
+<!--end container-->
+<script src="assets/js/tabs.js" charset="utf-8"></script>
+<script src="assets/js/tt1.login.js" charset="gbk"></script>
+<script src="assets/js/jquery.simplemodal-1.4.4.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+var balance        = Number(0.00),
+    is_first_cash  = Number(1),
+    rebate         = Number(0),
+    cash_num       = Number(0);
+
+
+$(function(){
+    $("form#paypasswd_form").loginFormVali({
+        submitMark: 'input#paypasswd_submit',
+        submitHandler: function(form, validator) {
+            var _inputElem = form.find('input.inputbox'),
+                _isPost    = true;
+            _inputElem.each(function(){
+                var _self = $(this);
+                if ($.trim(_self.val()).length <= 0 ) {
+                    _isPost = false;
+                }
+            });
+
+            if (_isPost && validator.isSubmit()) {
+                form.submit();
+            }
+            /*else {
+                var panel = $("div.login_main");
+                panel.css({'position':'absolute'});
+			    var offset = panel.offset();
+                offset.left += 175;
+
+                for(var i = 1; 4 >= i; i++) {
+                    panel.animate({left:offset.left - (40 - 10 * i)}, 50);
+                    panel.animate({left:offset.left + 2 * (40 - 10 * i)}, 50);
+                }
+            }*/
+        }
+    });
+
+    $('input#cash_money_num').keyup(function(e){
+        var $this = $(this);
+        var _val = $this.val();
+        if (!(/^\d+$/.test(_val))) {
+            if (!(/^\d+\.{1}\d{0,2}$/.test(_val))) {
+                $this.val(_val.substr(0, _val.length-1));
+            }
+        }
+
+        if (/^0+$/.test(_val)) {
+            $this.val('');
+        }
+    });
+
+    //setTimeout(function(){$('input#cash_money_num').val('');}, 1000);
+    
+
+    $('input#cash_money_num').blur(function(e){
+        var money = parseFloat($(this).val() || 0),
+            _fee = 0,
+            tip = '';
+
+        if (money <= 0) {
+            $('b#fee_tip_1').html('￥0元');
+            $('b#fee_tip_2').html('￥0元');
+            return;
+        }
+
+
+        $('b#fee_tip_1').html('￥0元');
+
+        if (rebate <= 0) {
+            _fee = (money * 0.005).toFixed(2);
+            $('b#fee_tip_1').html('￥' + String(_fee) + '元');
+        }
+        if (rebate > 0 && rebate < money) {
+            var _fee_money = money - rebate;
+            _fee = (_fee_money * 0.005).toFixed(2);
+            if (_fee > 0) {
+                $('b#fee_tip_1').html('￥' + String(_fee) + '元');
+            }
+        }
+        
+        if (cash_num >= 4) {
+            //_fee += 2;
+            $('b#fee_tip_2').html('￥2.00元（本月第' + String(cash_num + 1) + '次提现）');
+        }
+        /*if (is_first_cash > 0) {
+            $('b#fee_tip_2').html('第一次申请提现，客服将电话核实您的银行卡和身份信息');
+        }*/
+    });
+});
+
+var counter = 0,
+    vailCode = '你还未获取过手机验证码';
+
+function send_phone_captcha(o)
+{
+    if (counter > 0) {
+        return false;
+    }
+    var _self = $(o),
+        elm = $('input[name="phone"]');
+
+    $.ajax({
+        url: '/?user&q=user_phone_captcha',
+        type: "POST",
+        dataType: "json",
+        async: false,
+        data: {phone: elm.val()}
+    })
+    .always(function(){
+    })
+    .done(function(result){
+        if (result.success) {
+            counter = 60;
+            countdown();
+            vailCode = "您的验证码：" + String(result.code);
+        }
+        else {
+            alert('验证短信发送失败，请联系客服人员');
+        }
+    })
+    .fail(function(){
+       alert('验证短信发送失败，请联系客服人员');
+    });
+}
+
+function countdown()
+{
+    counter--;
+    if (counter <= 0) {
+        $('a#send_phone_captcha').text('获取短信验证码').css({color: '#656565'});
+    }
+    else {
+        $('a#send_phone_captcha').text( String(counter) + '秒后重新获取').css({color: '#c0c0c0'});
+        setTimeout(countdown, 900);
+    }
+}
+
+function show_captcha()
+{
+    alert(vailCode);
+}
+
+function postCashApply() {
+    var isPost = true;
+    $('form#cash_apply_form').find('input[type="text"]').each(function(){
+        if ($.trim($(this).val()).length <= 0) {
+            isPost = false;
+        }
+    });
+
+    var money = parseInt($('input#cash_money_num').val() || 0);
+
+    if (money < 100) {
+        alert('提现金额必须大于100元，请仔细检查');
+        return false;
+    }
+
+    if (money > balance) {
+        alert('你的可用余额不足，请仔细检查');
+        return false;
+    }
+
+    if (isPost) {
+        $('form#cash_apply_form').submit();
+    }
+    else {
+        alert('提现申请填写不完整，请仔细检查');
+        return false;
+    }
+}
+
+var payPasswd = function() {
+    $('div#paypwd-popup-window').modal({
+        closeClass: 'close',
+        closeHTML:  '<a href="javascript:;" class="close" title="关闭"></a>',
+        dataId:     'paypwd-popup-window',
+        warpClass:  'login_box confirm'
+    });
+};
+
+
+var feeDetail = function() {
+    $('div#fee-popup-window').modal({
+        closeClass: 'close',
+        closeHTML:  '<a href="javascript:;" class="close" title="关闭"></a>',
+        dataId:     'fee-popup-window',
+        warpClass:  'fee_box confirm'
+    });
+};
+function cashnew(o) {
+    var money = parseFloat($('input[name="money.amount"]').val() || 0);
+    if (money > 0) {
+    //    $('form#payment').submit();
+    //	alert('充值成功');
+    if (confirm("是否进行保存?")) {
+		var kunnr=$("#kunnr").val();
+		// alert(kunnr);
+		var amount= -$("#amount").val();
+		// alert(amount);
+		 var url="insertMoney.action";
+		 url=url+"?ran"+Math.random();
+		$.post(url,
+
+				{"money.kunnr": kunnr, "money.amount": amount},
+
+				     function(data){
+					var member = eval("("+data+")"); 
+				         // alert("Data Loaded: " + member.execString);
+						if( member.execString=="1"){
+							alert("提现成功");
+							}
+				   });
+	
+	}
+    }
+    else {
+        alert('请输入提现金额');
+        return false;
+    }
+}
+</script>
+</body>
+</html>

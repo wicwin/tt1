@@ -1,0 +1,640 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<title>图腾贷官网_p2p网贷_p2p投资理财_中国最好的网贷平台</title>
+<meta name="description" content="图腾贷(www.tt1.com.cn)是中国领先的互联网金融P2P理财平台，为投资理财用户提供透明、安全、高效的互联网金融P2P理财服务。投资理财用户可通过图腾贷p2p理财平台进行投标、购买债权等方式进行投资获得安全的高收益" />
+<meta name="keywords" content="图腾贷,互联网金融,P2P理财,p2p投资理财平台,网贷,p2p网贷,网络借贷,网贷平台,投资理财,中国好网贷" />
+<link href="assets/css/index.css" rel="stylesheet" type="text/css">
+<script src="assets/js/jquery.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="container"><!--外部容器-->
+<div class="online_service" id="online_service_box"><!--在线客服-->
+<em title="在线客服" onclick="javascript:openCSBar(this);return false;" style="display:none;"></em>
+<a href="javascript:;" onclick="javascript:closeCSBar(this);return false;" title="关闭" id="close_cs_left" class="close2" style="right:13px;"></a>
+<div class="os_main" style="right:0px;">
+<a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" target="_blank" title="图腾贷官方群" class="qqqun"></a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=792546003&site=qq&menu=yes" title="点击这里发消息给我">客服-金金</a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=707631952&site=qq&menu=yes" title="点击这里发消息给我">客服-莎莎</a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=286953203&site=qq&menu=yes" title="点击这里发消息给我">客服-阳阳</a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=982634105&site=qq&menu=yes" title="点击这里发消息给我">客服-肖肖</a>
+<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=412691143&site=qq&menu=yes" title="点击这里发消息给我">客服-淘淘</a>
+<i></i>
+</div>
+</div>
+<script type="text/javascript" src="assets/js/jquery.cookie.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+function openCSBar(o) {
+var _self = $(o);
+_self.siblings('div.os_main, a.close2').show();
+_self.siblings('div.os_main').css('right', '0px');
+_self.siblings('a.close2').css('right', '13px');
+_self.hide();
+}
+function closeCSBar(o) {
+var _self = $(o);
+_self.siblings('em').show();
+_self.siblings('div.os_main').hide();
+_self.hide();
+$.cookie('is_cs_pop', '1', { expires: 365 });
+}
+$(function(){
+var is_cs_pop = $.cookie('is_cs_pop'),
+o = $('a#close_cs_left').get(0);
+if (is_cs_pop !== undefined) {
+closeCSBar(o);
+}
+})
+</script>
+<div class="header"><!--顶部小黑条条-->
+<div class="w1110">
+<em class="tips_phone">服务时间：周一至周五9：00-17:30</em>
+<div class="top_link" style="inline-block;">
+<a href="/help/index.html">新手指引</a>
+<a href="login.jsp">登录</a><a href="/reg.jsp">免费注册</a>
+</div>
+<div class="user_link" style="display:none;">
+<p id="login-user-name"><i class="icon_user2"></i></p>
+<span id="user_short_menu">
+<a href="/?user">用户中心</a>
+<a href="/?user&q=code/borrow/success&type=wait">待收列表</a>
+<a href="/?user&q=code/account/recharge_new">充值</a>
+<a href="/?user&q=logout&type=index">退出登录</a>
+</span>
+</div>
+</div>
+</div>
+<div class="nav"><!--顶部导航-->
+<div class="w1110">
+<a href="/index1.jsp" class="icon_logo"></a>
+<div class="nav_title">
+<a class="on" href="/index1.jsp">网站首页</a>
+<a href="/ttl/index1.jsp">我要投资</a>
+<a class="sscw" href="/ttl/index1.jsp">实时财务<i class="icon_new"></i></a>
+<a href="http://bbs.tt1.com.cn/forum-77-1.html" target="_blank">车库照片</a>
+<a href="/help/index.html">新手指引</a>
+<!--<a href="/faq/index.html">常见问题</a>-->
+<a href="/?about_us">关于我们</a>
+<a href="http://bbs.tt1.com.cn" style="background:#ea544a; padding:3px 5px 4px 7px; border-radius:2px; color:#fff;">图腾贷论坛</a>
+</div>
+<div class="qtpanel">
+<h2>
+<i class="icon_qq has_tooltip" title="在线客服"></i>
+<div class="popbox tooltip" tabindex="-2" style="display:none;">
+<i class="arrow_up"></i>
+<a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" class="qqqun" target="_blank">官方群</a>
+<a href="http://wpa.qq.com/msgrd?v=3&uin=792546003&site=qq&menu=yes" class="qq" target="_blank">客服金金</a>
+<a href="http://wpa.qq.com/msgrd?v=3&uin=707631952&site=qq&menu=yes" class="qq" target="_blank">客服莎莎</a>
+<a href="http://wpa.qq.com/msgrd?v=3&uin=286953203&site=qq&menu=yes" class="qq" target="_blank">客服阳阳</a>
+<a href="http://wpa.qq.com/msgrd?v=3&uin=982634105&site=qq&menu=yes" class="qq" target="_blank">客服肖肖</a>
+<a href="http://wpa.qq.com/msgrd?v=3&uin=412691143&site=qq&menu=yes" class="qq" target="_blank">客服淘淘</a>
+</div>
+</h2>
+<!--<h2 style="display:none;"><i class="icon_sina"></i> </h2>-->
+<h2>
+<i class="icon_weixin has_tooltip" title="官方微信"></i>
+<div class="popbox tooltip" tabindex="-1" style="left:-52px;display:none;">
+<i class="arrow_up"></i>
+<em></em>
+</div>
+</h2>
+</div>
+</div>
+</div>
+<!--end nav-->
+
+<script src="assets/js/tooltip.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+$(function(){
+var is_cs_pop = $.cookie('is_cs_pop');
+$('.has_tooltip').ToolTip();
+
+$.ajax({
+url: '/?user&q=get_user_info',
+data: {},
+cache: false,
+type: 'GET',
+dataType: 'json'
+})
+.done(function(result){
+if (result.username.length > 0) {
+var username = result.username.substr(0, 3) + '******' + result.username.substr(9, 2);
+$('div.top_link').hide();
+$('p#login-user-name').html('<i class="icon_user2"></i>' + username);
+$('div.user_link').show();
+
+$('.user_req_login').hide();
+$('.user_logined').show();
+$('p#index_login_user_name').html('您好，' + username);
+
+}
+})
+});
+</script>
+
+<div class="clear"></div>
+<div class="focus" id="silder_banner"><!--焦点图-->
+<ul class="focus_main"><!--焦点图主要内容-->
+<li style="background-color:rgb(255,65,30);"><a href="http://bbs.tt1.com.cn/thread-1297-1-1.html" target="_blank"><img src="assets/images/tuijian_banner.jpg"></a></li>
+<li style="background-color:#167ad6;"><a href="/junhe/index.html" target="_blank"><img src="assets/images/junhe_banner.jpg"></a></li>
+<li style="background: url('assets/images/newproductsbg.jpg') repeat-x"><a href="http://bbs.tt1.com.cn/thread-613-1-1.html" target="_blank"><img src="assets/images/newproducts.jpg"></a></li>
+<li style="background-color:#ffdd61;"><a href="http://www.tt1.com.cn/notice/11418096273/a432.html" target="_blank"><img src="assets/images/fengxianzhunbeijin.jpg"></a></li>
+<li style="background:url(assets/images/focuspic_poyi_bg.png);"><a href="http://bbs.tt1.com.cn/thread-407-1-1.html" target="_blank"><img src="assets/images/focuspic_poyi.jpg"></a></li>
+</ul>
+<div class="clear"></div>
+<div class="w1110" style="height:305px;">
+<ul class="focus_index"><!--焦点图切换标签-->
+</ul>
+
+<div class="gain"><!--收益比较-注册-->
+<div class="case">
+<br>
+<h3>图腾贷18%</h3>
+<h4>余额宝4.18%</h4>
+<h5>银行定期3.3%</h5>
+</div>
+<a class="button_login user_req_login" href="/reg.jsp" style="display:inline-block;">免费注册</a>
+<p class=" user_req_login">已有账号？<a href="/login.jsp" style="display:inline-block;">立即登录</a></p>
+<a class="button_login user_logined" href="/?user" style="display:none;">个人中心</a>
+<p class="user_logined" id="index_login_user_name" style="display:none;">您好，</p>
+</div>
+</div>
+</div>
+<!--end focus-->
+<div class="clear"></div>
+<div class="scroll" id="tender_news">
+<ul>
+<li><i class="icon_smile"></i><a href="/notice/11420342609/a213.html">图腾贷收费标准</a></li>
+<li><i class="icon_smile"></i><a href="/notice/11418096273/a432.html">图腾贷关于风险准备金的公告</a></li>
+<li><i class="icon_smile"></i><a href="/notice/11431931421/a851.html">图腾贷关于近期上线“新手体验标”的公告</a></li>
+<li><i class="icon_smile"></i><a href="/notice/11430901636/a824.html">图腾贷抵押车产品风控实录</a></li>
+<li><i class="icon_smile"></i><a href="/notice/11430813253/a819.html">图腾贷关于公布汽车抵押标GPS定位跟踪信息的公告</a></li>
+<li><i class="icon_smile"></i><a href="/notice/11430728273/a816.html">图腾贷关于“推荐送奖励”活动的公告</a></li>
+<li><i class="icon_smile"></i><a href="/notice/11432522949/a868.html">图腾贷5月25日第二次发标公告</a></li>
+</ul>
+</div>
+<div class="w1110">
+<div class="text">
+<h2>图腾贷<b>天天返息</b></h2>
+<h3>Tutengdai return interest every day</h3>
+<h4>图腾贷是西南首家专注车辆质押的p2p理财平台，高收益，有保障，您可以将手中富余资金通过平台来进行撮合。借给信用良好的中小微企业...</h4>
+<a class="redbutton2" href="/help/index.html">了解详情</a>
+</div>
+<div class="cont"><!--数据统计-->
+<i class="icon_num1"></i><i class="icon_yi"></i><i class="icon_num5"></i><i class="icon_num9"></i><i class="icon_num2"></i><i class="icon_num0"></i><i class="icon_wan"></i><i class="icon_num3"></i><i class="icon_num0"></i><i class="icon_num0"></i> <h5>截止目前图腾贷投资总额</h5>
+<div class="cut_list" id="tender_message">
+<ul style="right:0px;">
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;138******49成功投资 ￥8004.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;180******16成功投资 ￥50.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;139******98成功投资 ￥20065.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;151******15成功投资 ￥9200.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;139******58成功投资 ￥10712.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;159******78成功投资 ￥30054.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;151******37成功投资 ￥2000.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;136******96成功投资 ￥68512.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;138******55成功投资 ￥1003.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;153******37成功投资 ￥400.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;189******18成功投资 ￥92387.00元&nbsp;<span>年收益18.00%</span></li>
+<li><i class="icon_user"></i><span>2天前</span>&nbsp;138******20成功投资 ￥5000.00元&nbsp;<span>年收益18.00%</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div class="line"></div>
+<div class="w1110">
+<div class="exp1"> <i class="icon_exp1"><a href="/help/index.html" style="width:145px;height:110px;display:block;"></a></i>
+<h2><a href="/help/index.html">投资理财</a></h2>
+<p><b class="red">30</b>倍存款利息</p>
+<p><b class="green">￥50</b>元起步</p>
+<p><b class="black">0</b>手续费</p>
+</div>
+<div class="exp2"> <i class="icon_exp2"><a href="/safe/index.html" style="width:145px;height:110px;display:block;"></a></i>
+<h2><a href="/safe/index.html">五重风险保障</a></h2>
+<p><b class="red">审</b>专业风控</p>
+<p><b class="green">保</b>本息保障</p>
+</div>
+<div class="exp3"> <i class="icon_exp3"><a href="/help/index.html" style="width:145px;height:110px;display:block;"></a></i>
+<h2><a href="/help/index.html">灵活转让(开发中)</a></h2>
+<p><b class="red">2步</b>搞定赎回</p>
+<p><b class="green">当天</b>最快当天到账</p>
+</div>
+</div>
+<div class="clear"></div>
+<div class="main"><!--主要内容区域-->
+<div class="left">
+<div class="box790 new">
+<h3>新手专区<h4>新客专享，优先投资；手动投标，50元起投</h4></h3>
+<ul>
+<li>
+<div class="message">
+<h5><i class="icon_xian" title="限额：￥40000.00元"></i><i class="icon_xin" title="新手"></i><i class="icon_xu" title="续借"></i><i class="icon_zhi" title="质押"></i><a href="/invest/full_success/a20150500134.html">续借：袁先生宝马530Li轿车质押借款</a></h5>
+<h6>
+<b>￥200000.00</b>
+<p>投资总额</p>
+</h6>
+<h6>
+<b class="red">18.00%</b>
+<p>年化收益</p>
+</h6>
+<h6>
+<b>
+1个月
+</b>
+<p>贷款期限</p>
+</h6>
+<h6>
+<b>05-25 14:30</b>
+<p>发标时间</p>
+</h6>
+</div>
+<div class="operating"><!--进度-->
+<div class="progress_red">
+<p>融资进度：<b>100%</b></p>
+<h3><i style="width:100%;"></i></h3>
+</div>
+<div class="invested"><!--立即投标-->
+<p>可投金额：<b>￥0.00元</b></p>
+<a href="/invest/full_success/a20150500134.html" class="greenbutton3">还款中...</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="box790">
+<h3>投资列表</h3>
+<h4><a href="/index.php?invest">更多</a></h4>
+<ul>
+<li>
+<div class="message">
+<h5><i class="icon_xian" title="限额：20000.00"></i><i class="icon_xu" title="续借"></i><i class="icon_zhi" title="质押"></i><a href="/invest/full_success/a20150500135.html">续借：李先生奔驰E300L轿车质押借款</a></h5>
+<h6>
+<b>￥100000.00</b>
+<p>投资总额</p>
+</h6>
+<h6>
+<b class="red">18.00%</b>
+<p>年化收益</p>
+</h6>
+<h6>
+<b>
+1个月
+</b>
+<p>贷款期限</p>
+</h6>
+<h6>
+<b>05-25 15:15</b>
+<p>发标时间</p>
+</h6>
+</div>
+<div class="operating"><!--进度-->
+<div class="progress_red">
+<p>融资进度：<b>100%</b></p>
+<h3><i style="width:100%;"></i></h3>
+</div>
+<div class="invested"><!--立即投标-->
+<p>可投金额：<b>￥0.00元</b></p>
+<a href="/invest/full_success/a20150500135.html" class="greenbutton3">还款中...</a>
+</div>
+</div>
+</li>
+<li>
+<div class="message">
+<h5><i class="icon_xian" title="限额：20000.00"></i><i class="icon_xu" title="续借"></i><i class="icon_zhi" title="质押"></i><a href="/invest/full_success/a20150500133.html">续借：肖先生奔驰E260L轿车质押借款</a></h5>
+<h6>
+<b>￥140000.00</b>
+<p>投资总额</p>
+</h6>
+<h6>
+<b class="red">18.00%</b>
+<p>年化收益</p>
+</h6>
+<h6>
+<b>
+1个月
+</b>
+<p>贷款期限</p>
+</h6>
+<h6>
+<b>05-25 15:00</b>
+<p>发标时间</p>
+</h6>
+</div>
+<div class="operating"><!--进度-->
+<div class="progress_red">
+<p>融资进度：<b>100%</b></p>
+<h3><i style="width:100%;"></i></h3>
+</div>
+<div class="invested"><!--立即投标-->
+<p>可投金额：<b>￥0.00元</b></p>
+<a href="/invest/full_success/a20150500133.html" class="greenbutton3">还款中...</a>
+</div>
+</div>
+</li>
+<li>
+<div class="message">
+<h5><i class="icon_xian" title="限额：40000.00"></i><i class="icon_xu" title="续借"></i><i class="icon_zhi" title="质押"></i><a href="/invest/full_success/a20150500132.html">续借：宋先生奔驰GL450越野车质押借款</a></h5>
+<h6>
+<b>￥290000.00</b>
+<p>投资总额</p>
+</h6>
+<h6>
+<b class="red">18.00%</b>
+<p>年化收益</p>
+</h6>
+<h6>
+<b>
+1个月
+</b>
+<p>贷款期限</p>
+</h6>
+<h6>
+<b>05-25 14:45</b>
+<p>发标时间</p>
+</h6>
+</div>
+<div class="operating"><!--进度-->
+<div class="progress_red">
+<p>融资进度：<b>100%</b></p>
+<h3><i style="width:100%;"></i></h3>
+</div>
+<div class="invested"><!--立即投标-->
+<p>可投金额：<b>￥0.00元</b></p>
+<a href="/invest/full_success/a20150500132.html" class="greenbutton3">还款中...</a>
+</div>
+</div>
+</li>
+<li>
+<div class="message">
+<h5><i class="icon_xu" title="续借"></i><i class="icon_zhi" title="质押"></i><a href="/invest/full_success/a20150500127.html">续借：卢女士奔驰E260L轿车质押借款</a></h5>
+<h6>
+<b>￥130000.00</b>
+<p>投资总额</p>
+</h6>
+<h6>
+<b class="red">18.50%</b>
+<p>年化收益</p>
+</h6>
+<h6>
+<b>
+2个月
+</b>
+<p>贷款期限</p>
+</h6>
+<h6>
+<b>05-25 11:30</b>
+<p>发标时间</p>
+</h6>
+</div>
+<div class="operating"><!--进度-->
+<div class="progress_red">
+<p>融资进度：<b>100%</b></p>
+<h3><i style="width:100%;"></i></h3>
+</div>
+<div class="invested"><!--立即投标-->
+<p>可投金额：<b>￥0.00元</b></p>
+<a href="/invest/full_success/a20150500127.html" class="greenbutton3">还款中...</a>
+</div>
+</div>
+</li>
+<li>
+<div class="message">
+<h5><i class="icon_xian" title="限额：20000.00"></i><i class="icon_xu" title="续借"></i><i class="icon_zhi" title="质押"></i><a href="/invest/full_success/a20150500126.html">续借：周先生宝马525Li轿车质押借款</a></h5>
+<h6>
+<b>￥150000.00</b>
+<p>投资总额</p>
+</h6>
+<h6>
+<b class="red">18.00%</b>
+<p>年化收益</p>
+</h6>
+<h6>
+<b>
+1个月
+</b>
+<p>贷款期限</p>
+</h6>
+<h6>
+<b>05-25 11:00</b>
+<p>发标时间</p>
+</h6>
+</div>
+<div class="operating"><!--进度-->
+<div class="progress_red">
+<p>融资进度：<b>100%</b></p>
+<h3><i style="width:100%;"></i></h3>
+</div>
+<div class="invested"><!--立即投标-->
+<p>可投金额：<b>￥0.00元</b></p>
+<a href="/invest/full_success/a20150500126.html" class="greenbutton3">还款中...</a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="right">
+<div class="box290" id="slide_broadcast">
+<h2>媒体报道
+<ul class="slider_nav">
+</ul>
+</h2>
+<div class="clear"></div>
+<ul class="report">
+<li style="width:100%;">
+<a href="/reports/11418373641/a192.html"><img src="data/upfiles/images/2014-09/08/1_articles_article_14101522815.gif" alt="平台安全测评：有利网，陆金所，图腾贷和人人贷" style="width:260px;height:160px;"/></a>
+<p><a href="/reports/11418373641/a192.html">平台安全测评：有利网，陆金所，图腾贷</a></p>
+<span>&nbsp; &nbsp; 编者注：作者系资深老股民，历经股市大涨大落，后来加入期货和炒金大军，现主要转向于收益和稳定性都更靠谱P2P投资，投P2P的资金已达500多万，对各网贷平台优势和陷进都非常了解，同时在各理财论坛发表</span>
+</li>
+<li style="width:100%;">
+<a href="/reports/11431592352/a840.html"><img src="data/upfiles/images/2015-05/14/1_articles_article_14315923527.jpg" alt="车贷P2P安全吗？图腾贷实时财务引领安全理财" style="width:260px;height:160px;"/></a>
+<p><a href="/reports/11431592352/a840.html">车贷P2P安全吗？图腾贷实时财务引领</a></p>
+<span>&nbsp;&nbsp;来源：上海热线 &nbsp; &nbsp; &nbsp; 查看原文：http://rich.online.sh.cn/rich/gb/content/2015-04/14/content_735852</span>
+</li>
+<li style="width:100%;">
+<a href="/reports/11431592416/a781.html"><img src="data/upfiles/images/2015-04/21/1_articles_article_14296022747.jpg" alt="车贷平台综合评测：投哪网、图腾贷、微贷网、融金所" style="width:260px;height:160px;"/></a>
+<p><a href="/reports/11431592416/a781.html">车贷平台综合评测：投哪网、图腾贷、微</a></p>
+<span>&nbsp; &nbsp; &nbsp; &nbsp;如今的P2P理财产品就如同在商场买东西一样，各品台不断的推陈出新，什么房贷、车贷、票据业务贷款以及各种类型的工程贷款、信用贷款等等。而笔者则认为，虽然产品花样多，但是结合</span>
+</li>
+</ul>
+<!--end report-->
+</div>
+
+<div class="box290">
+<h3 id="tabs-btn-news"><a class="on tab-handle" href="javascript:;" data-target="#notice-tab">网站公告</a><a href="javascript:;" class="tab-handle" data-target="#news-tab">行业新闻</a><i class="icon_linered"></i><p><a class="news-more" href="/index.php?notice">更多&gt;</a></p></h3>
+<div class="clear"></div>
+<div class="news_list">
+<ul id="notice-tab" class="tab-item">
+<li><a href="/notice/11420342609/a213.html">图腾贷收费标准</a></li>
+<li><a href="/notice/11418096273/a432.html">图腾贷关于风险准备金的公告</a></li>
+<li><a href="/notice/11431931421/a851.html">图腾贷关于近期上线“新手体验标”的公告</a></li>
+<li><a href="/notice/11430901636/a824.html">图腾贷抵押车产品风控实录</a></li>
+<li><a href="/notice/11430813253/a819.html">图腾贷关于公布汽车抵押标GPS定位跟踪信息的</a></li>
+<li><a href="/notice/11430728273/a816.html">图腾贷关于“推荐送奖励”活动的公告</a></li>
+<li><a href="/notice/11432522949/a868.html">图腾贷5月25日第二次发标公告</a></li>
+</ul>
+<ul id="news-tab" class="tab-item" style="display:none;">
+<li><a href="/dynamic/11431589033/a841.html">西南地区专做抵押贷款模式的P2P平台</a></li>
+<li><a href="/dynamic/11431592352/a840.html">车贷P2P安全吗？图腾贷实时财务引领</a></li>
+<li><a href="/dynamic/11431653911/a846.html">互联网金融布局提速 证券行业竞争加剧</a></li>
+<li><a href="/dynamic/11431653412/a845.html">6月央行或将颁发个人征信牌照 已听取</a></li>
+<li><a href="/dynamic/11419901238/a535.html">p2p网贷值得大家去信赖</a></li>
+<li><a href="/dynamic/11419814962/a529.html">p2p网贷能够改善大家的生活质量</a></li>
+<li><a href="/dynamic/11419556914/a525.html">p2p网贷能够快捷地带来回报</a></li>
+</ul>
+</div>
+</div>
+<div class="box290">
+<h2>投资风云榜<p id="tabs-btn-rich"><em class="on" data-target="#top_years_rich">总榜</em><em data-target="#top_month_rich">月榜</em></p></h2>
+<div class="rank"><!--投资风云榜-->
+<ul id="top_years_rich" class="tab-item">
+<li class="icon_rank0"><i></i>138******81<span>￥2819347.00</span></li>
+<li class="icon_rank1"><i></i>133******99<span>￥1693338.00</span></li>
+<li class="icon_rank2"><i></i>136******94<span>￥1656997.00</span></li>
+<li class="icon_rank3"><i></i>186******32<span>￥1637189.00</span></li>
+<li class="icon_rank4"><i></i>134******38<span>￥1296341.00</span></li>
+</ul>
+<ul id="top_month_rich" class="tab-item" style="display:none;">
+<li class="icon_rank0"><i></i>138******81<span>￥336373.00</span></li>
+<li class="icon_rank1"><i></i>133******38<span>￥277000.00</span></li>
+<li class="icon_rank2"><i></i>156******99<span>￥224253.00</span></li>
+<li class="icon_rank3"><i></i>156******61<span>￥185415.00</span></li>
+<li class="icon_rank4"><i></i>180******18<span>￥181015.00</span></li>
+</ul>
+</div>
+<!--end rank-->
+</div>
+</div>
+<!--end right-->
+<div class="clear"></div>
+<div class="box290" style="width:1100px;">
+<h3 id="tabs-btn-link"><a class="on" href="javascript:;" data-target="#news_media">媒体报道</a><a href="javascript:;" data-target="#links">友情链接</a><i class="icon_linered"></i></h3>
+<div class="clear"></div>
+<div class="report2">
+<ul id="news_media" class="r2_list tab-item">
+<li><a href="#"><img src="assets/images/p1.jpg" alt=""/></a></li>
+<li><a href="#"><img src="assets/images/p2.jpg" alt=""/></a></li>
+<li><a href="#"><img src="assets/images/p3.jpg" alt=""/></a></li>
+<li><a href="#"><img src="assets/images/p4.jpg" alt=""/></a></li>
+<li><a href="#"><img src="assets/images/p5.jpg" alt=""/></a></li>
+<li><a href="#"><img src="assets/images/p6.jpg" alt=""/></a></li>
+</ul>
+<ul id="links" class="r2_link tab-item" style="display:none;">
+<li><a href="http://www.wangdaizhijia.com/" target="_blank">网贷之家</a></li>
+<li><a href="http://www.erongtu.com/" target="_blank">融途网</a></li>
+<li><a href="http://www.cnaidai.com/" target="_blank">p2p网贷</a></li>
+<li><a href="http://www.p2peye.com/" target="_blank">网贷天眼</a></li>
+<li><a href="http://www.andaike.com/" target="_blank">安贷客</a></li>
+<li><a href="http://www.zongls.cn/" target="_blank">棕榈树</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!--end main-->
+<div class="clear"></div>
+<div class="footer"><!--底部-->
+<div class="footer_main">
+<h2>
+<a href="/hetong/11410246594/a208.html">法律法规</a>
+<a href="/hetong/11410256105/a211.html">公司证照</a>
+<a href="/hetong/11410310566/a209.html">债权转让协议书</a>
+<a href="/hetong/131413277622/a279.html">办公环境</a>
+<a href="/notice/11410269888/a213.html">资费说明</a>
+<a href="assets/images/20140910120637.jpg" target="_blank">平台原理</a>
+</h2>
+<h3>公司地址：成都市青羊区顺城大街冠城广场12楼E座</h3>
+<h3>&copy;2014 成都市正大图腾网络科技有限公司&nbsp;<a href="http://www.miitbeian.gov.cn" target="_blank">蜀ICP备14007465号-3</a></h3>
+<h4>400-007-9028</h4>
+<h5><i class="icon_phone"></i>官方群：<a href="http://shang.qq.com/wpa/qunwpa?idkey=ca0fa7b0b1442628576d6582e163df02d0ed981f325e5520ebb757ae029b1762" target="_blank">377599603(点击加入)</a></h5>
+<a key ="5492590f3b05a3da0fbc70ae" logo_size="83x30" logo_type="realname" href="http://www.anquan.org" ><script src="http://static.anquan.org/static/outer/js/aq_auth.js"></script></a>
+</div>
+</div>
+<!--end footer-->
+<div style="display:none;">
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253031880'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/stat.php%3Fid%3D1253031880' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+
+</div>
+<!--end container-->
+
+<script src="assets/js/jquery.slideBox.js" charset="utf-8"></script>
+<script src="assets/js/tabs.js" charset="utf-8"></script>
+<script type="text/javascript" charset="gbk">
+$(function(){
+$("div#silder_banner").slideBox({
+position : 'absolute'
+});
+$("div#tender_message").slideBox({
+direction : 'top',
+width : 330,
+height : 25,
+bottomBar : '',
+itemSelecter: 'ul',
+delay : 6
+});
+$("div#tender_news").slideBox({
+direction : 'top',
+height : 40,
+bottomBar : '',
+itemSelecter: 'ul',
+delay : 6
+});
+$("div#slide_broadcast").slideBox({
+bottomBar : 'ul.slider_nav',
+itemSelecter : 'ul.report',
+width : 290
+});
+
+var tabChange = function(tab) {
+var _btn = $(tab.btn),
+_line = _btn.siblings('i.icon_linered'),
+_p = _btn.siblings('p'),
+_more = _p.find('a.news-more'),
+_bo = _btn.offset(),
+_po = _btn.parent().offset(),
+_left = _bo.left - _po.left;
+if (_more.length > 0) {
+if (_btn.data('target') == '#notice-tab') {
+_more.attr('href', '/index.php?notice');
+}
+
+if (_btn.data('target') == '#news-tab') {
+_more.attr('href', '/index.php?dynamic');
+}
+}
+_line.animate({left: _left + 5}, "fast");
+}
+
+$('h3#tabs-btn-news').tabs({
+planSelector : 'div.news_list>ul.tab-item',
+tabButSelector : 'a.tab-handle',
+onChange : tabChange
+});
+$('p#tabs-btn-rich').tabs({
+tabButSelector : 'em',
+planSelector : 'div.rank>ul.tab-item'
+});
+$('h3#tabs-btn-link').tabs({
+planSelector : 'div.report2>ul.tab-item',
+onChange : tabChange
+});
+/*$('div.countdown').each(function(){
+});*/
+
+});
+
+
+function countdown() {
+
+}
+</script>
+
+<!--<canvas id="snow-container" style="position: fixed; left: 0px; top: 0px; z-index: 999; pointer-events: none;"></canvas>-->
+<div style="display:none;">1432542991</div>
+</body>
+</html>
